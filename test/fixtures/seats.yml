@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  string: 
+  integer: 
+  integer: 
+  boolean: 
+  belongs_to: 
+
+two:
+  string: 
+  integer: 
+  integer: 
+  boolean: 
+  belongs_to: 
