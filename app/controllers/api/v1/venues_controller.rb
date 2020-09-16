@@ -7,6 +7,7 @@ module Api
                 Venue.transaction do 
                     venue.create_seats if venue.save
                     venue.seats_process(seats_params)
+                    venue.best_seat
                 end
             end
 

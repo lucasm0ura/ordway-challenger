@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_09_15_005415) do
     t.integer "row"
     t.integer "column"
     t.boolean "available", default: false
+    t.boolean "best_seat", default: false
     t.bigint "venue_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

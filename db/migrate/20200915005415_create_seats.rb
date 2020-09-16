@@ -5,6 +5,7 @@ class CreateSeats < ActiveRecord::Migration[6.0]
       t.integer :row
       t.integer :column
       t.boolean :available, default: false
+      t.boolean :best_seat, default: false
       t.belongs_to :venue
 
       t.timestamps
