@@ -1,0 +1,9 @@
+Started GET "/api/v1/seats/" for ::1 at 2020-09-19 01:39:37 -0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::SeatsController#index as JSON
+[active_model_serializers]   [1m[36mSeat Load (0.8ms)[0m  [1m[34mSELECT "seats".* FROM "seats"[0m
+[active_model_serializers]   ↳ app/controllers/api/v1/seats_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.91ms)
+Completed 200 OK in 325ms (Views: 25.2ms | ActiveRecord: 2.4ms | Allocations: 6763)
+
+
