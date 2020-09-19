@@ -3,12 +3,8 @@ module Api
         class VenuesController < ApplicationController
 
             def import
-                venue = Venue.new(venue_params)
-                Venue.transaction do 
-                    venue.create_seats if venue.save
-                    venue.seats_process(seats_params)
-                    venue.best_seat
-                end
+                venue = Venue.new(venue_params)        
+                venue.create_seats(seats_params) if venue.save                                
             end
 
 

@@ -5,21 +5,21 @@ module Api
             def index
                 seats = Seat.all
                 render json: {
-                    seats: seats
+                    seats: seats,
                     status: 200
                 }
             end
 
             def group_best_seats        
-                seats = Seat.best_group_seat
-                if !seats.nil?
+                seats = Seat.best_group_seat(params["amount_of_seats"])
+                if(!seats.empty?)
                     render json: {
-                        seats: seats
+                        seats: seats,
                         status: 200
                     }                
                 else
                     render json: {
-                        seats: seats
+                        message: "There haven't seat for all the people in request",
                         status: 400
                     }
                 end                
