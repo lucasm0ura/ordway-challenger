@@ -7,7 +7,7 @@ Welcome to my repository about ordway-challenge-api
 - PostgreSQL 11 or upper
 - Postman or similar
 
-## Instruções de execução
+## Steps
 
 To generate database and tables:
 
