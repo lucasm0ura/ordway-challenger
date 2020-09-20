@@ -3,8 +3,13 @@ module Api
         class VenuesController < ApplicationController
 
             def import
-                venue = Venue.new(venue_params)        
-                venue.create_seats(seats_params) if venue.save                                
+                venue = Venue.new(venue_params) 
+                venue.save       
+                venue.create_seats(seats_params)     
+                render json: {
+                    venue: venue,
+                    status: 200
+                }                        
             end
 
 

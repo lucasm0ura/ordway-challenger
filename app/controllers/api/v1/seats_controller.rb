@@ -11,7 +11,7 @@ module Api
             end
 
             def group_best_seats        
-                seats = Seat.best_group_seat(params["amount_of_seats"])
+                seats = Seat.best_group_seat(params["amount_of_seats"].to_i)
                 if(!seats.empty?)
                     render json: {
                         seats: seats,

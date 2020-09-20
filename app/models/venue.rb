@@ -1,14 +1,14 @@
 class Venue < ApplicationRecord
     has_many :seats
 
-    attribute :rows
-    attribute :columns
+    attribute :rows, numericality: { greater_than: 0, less_than_or_equal_to: 27 }
+    attribute :columns, numericality: { greater_than: 0 }
 
     ROWS_GROUP_NAME = ('a'..'z').to_a
 
-    def create_seats
-        (1..self.rows).each do |row|
-            (1..self.columns).each do |col|
+    def create_seats(seats_params)
+        (1..self.rows.to_i).each do |row|
+            (1..self.columns.to_i).each do |col|
                 position = (row - 1).to_i
                 row_name = ROWS_GROUP_NAME[position] + col.to_s
                 seats << Seat.new(position: row_name, row: row, column: col)
@@ -28,7 +28,7 @@ class Venue < ApplicationRecord
             seat.available = true if seat_param["status"] == "AVAILABLE"
             seat.save
         end
-        
+
         self.best_seat
     end
 
